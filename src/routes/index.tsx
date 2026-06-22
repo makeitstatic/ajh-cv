@@ -76,7 +76,7 @@ function Sidebar() {
     <aside className="md:fixed md:inset-y-0 md:left-0 md:w-[17rem] bg-sidebar text-sidebar-foreground flex md:flex-col items-center md:items-stretch md:py-12 py-4 px-4 md:px-0 z-20 shadow-lg">
       <a
         href="#about"
-        className="block md:mx-auto shrink-0 md:mb-6 mr-4 md:mr-0 rounded-full border-[0.4rem] border-sidebar-border overflow-hidden bg-sidebar-border"
+        className="block md:mx-auto shrink-0 md:mb-6 max-md:mr-4 rounded-full border-[0.4rem] border-sidebar-border overflow-hidden bg-sidebar-border"
         style={{ width: "10rem", height: "10rem" }}
       >
         <img
