@@ -68,9 +68,12 @@ function Sidebar() {
         className="block md:mx-auto shrink-0 md:mb-6 mr-4 md:mr-0 rounded-full border-[0.4rem] border-sidebar-border overflow-hidden bg-sidebar-border"
         style={{ width: "10rem", height: "10rem" }}
       >
-        <div className="w-full h-full grid place-items-center bg-muted text-muted-foreground text-3xl font-semibold">
-          AH
-        </div>
+        <img
+          src={profilePhoto.url}
+          alt="Anthony James Hiscock"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "50% 30%" }}
+        />
       </a>
       <nav className="flex-1 md:flex-none flex md:flex-col items-center gap-1 md:gap-0 overflow-x-auto">
         {SECTIONS.map((s) => (
