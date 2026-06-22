@@ -67,7 +67,7 @@
         background: var(--sidebar-border);
       }
       .avatar img { width: 100%; height: 100%; object-fit: cover; }
-      .nav { display: flex; flex-direction: column; }
+      .nav { display: flex; flex-direction: column; align-items: center; }
       .nav a {
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -76,8 +76,10 @@
         padding: 0.75rem 1rem;
         color: var(--sidebar-muted);
         transition: color 0.15s;
+        text-align: center;
       }
-      .nav a:hover { color: var(--accent); text-decoration: none; }
+      .nav a:hover,
+      .nav a.active { color: var(--accent); text-decoration: none; }
 
       @media (min-width: 768px) {
         .sidebar {
@@ -378,5 +380,41 @@
         </div>
       </section>
     </main>
+    <script>
+      (function() {
+        var links = document.querySelectorAll('.nav a[href^="#"]');
+        var map = {};
+        links.forEach(function(a) {
+          var id = a.getAttribute('href').slice(1);
+          var sec = document.getElementById(id);
+          if (sec) map[id] = a;
+        });
+        var sections = Object.keys(map).map(function(id) { return document.getElementById(id); });
+        function setActive(id) {
+          Object.keys(map).forEach(function(k) {
+            map[k].classList.toggle('active', k === id);
+          });
+        }
+        if ('IntersectionObserver' in window) {
+          var visible = {};
+          var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { visible[e.target.id] = e.intersectionRatio; });
+            var best = null, bestRatio = 0;
+            Object.keys(visible).forEach(function(k) {
+              if (visible[k] > bestRatio) { bestRatio = visible[k]; best = k; }
+            });
+            if (best) setActive(best);
+          }, { threshold: [0.25, 0.5, 0.75] });
+          sections.forEach(function(s) { io.observe(s); });
+        } else {
+          window.addEventListener('scroll', function() {
+            var y = window.scrollY + window.innerHeight / 3;
+            var current = sections[0].id;
+            sections.forEach(function(s) { if (s.offsetTop <= y) current = s.id; });
+            setActive(current);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
