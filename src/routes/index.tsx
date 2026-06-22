@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Linkedin, Github, Instagram, Facebook } from "lucide-react";
-import profilePhoto from "@/assets/AJH-photo-1.jpg.asset.json";
+import profilePhoto from "@/assets/AJH-photo-1-cropped.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,7 +72,7 @@ function Sidebar() {
           src={profilePhoto.url}
           alt="Anthony James Hiscock"
           className="w-full h-full object-cover"
-          style={{ objectPosition: "50% 30%" }}
+          style={{ objectPosition: "50% 50%" }}
         />
       </a>
       <nav className="flex-1 md:flex-none flex md:flex-col items-center gap-1 md:gap-0 overflow-x-auto">
