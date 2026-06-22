@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anthony James Hiscock — DevOps Engineer</title>
+    <meta name="description" content="CV of Anthony James Hiscock — DevOps Engineer based in Utrecht. Cloud, CI/CD, Agile coaching and systems integration across banking, government and enterprise." />
+    <meta property="og:title" content="Anthony James Hiscock — DevOps Engineer" />
+    <meta property="og:description" content="CV of Anthony James Hiscock — DevOps Engineer based in Utrecht. Cloud, CI/CD, Agile coaching and systems integration across banking, government and enterprise." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="photo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="photo.jpg" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #1f2533;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --border-soft: #eef0f3;
+        --accent: #c5631d;
+        --sidebar-bg: #2b2f3a;
+        --sidebar-fg: #f5f5f7;
+        --sidebar-muted: rgba(245, 245, 247, 0.7);
+        --sidebar-border: #3a3f4d;
+        --secondary: #f1f2f5;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.55;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { line-height: 1.15; margin: 0; }
+      h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -0.02em; }
+      h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 2.5rem; }
+      h3 { font-weight: 700; }
+      p { margin: 0 0 1rem; }
+      hr { border: 0; border-top: 1px solid var(--border); margin: 0; }
+      .accent { color: var(--accent); }
+      .uppercase { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+      .muted-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; font-weight: 600; color: var(--muted); }
+
+      /* Sidebar */
+      .sidebar {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg);
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.08);
+      }
+      .avatar {
+        display: block;
+        margin: 0 auto 1.5rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        border: 0.4rem solid var(--sidebar-border);
+        overflow: hidden;
+        background: var(--sidebar-border);
+      }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .nav { display: flex; flex-direction: column; }
+      .nav a {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--sidebar-muted);
+        transition: color 0.15s;
+      }
+      .nav a:hover { color: var(--accent); text-decoration: none; }
+
+      @media (min-width: 768px) {
+        .sidebar {
+          position: fixed;
+          inset: 0 auto 0 0;
+          width: 17rem;
+          padding: 3rem 0;
+        }
+        main { margin-left: 17rem; }
+      }
+      @media (max-width: 767px) {
+        .sidebar { flex-direction: row; align-items: center; padding: 1rem; }
+        .avatar { margin: 0 1rem 0 0; width: 4rem; height: 4rem; border-width: 0.25rem; }
+        .nav { flex-direction: row; overflow-x: auto; flex: 1; }
+        .nav a { padding: 0.5rem 0.75rem; white-space: nowrap; }
+      }
+
+      /* Sections */
+      section {
+        padding: 4rem 1.5rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      @media (min-width: 1024px) { section { padding: 6rem 5rem; } }
+      .container { width: 100%; max-width: 64rem; }
+
+      /* About */
+      .tagline { color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 1rem; margin: 0.5rem 0 2rem; }
+      .grid-2 { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+      @media (min-width: 1024px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+      .row { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-soft); }
+      @media (min-width: 640px) { .row { flex-direction: row; align-items: baseline; gap: 1.5rem; } .row > div:first-child { width: 12rem; flex-shrink: 0; } }
+      .row .label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; font-weight: 600; color: var(--muted); }
+      ul.specs { list-style: none; padding: 0; margin: 0; }
+      ul.specs li { padding: 0.35rem 0; }
+      ul.specs li::before { content: "▸ "; color: var(--accent); margin-right: 0.5rem; }
+
+      .summary { max-width: 56rem; }
+      .summary h3 { margin-bottom: 1rem; }
+
+      .socials { display: flex; gap: 0.75rem; margin-top: 2.5rem; }
+      .socials a {
+        width: 3rem; height: 3rem; border-radius: 50%;
+        background: var(--secondary); color: var(--fg);
+        display: grid; place-items: center;
+        transition: background 0.15s, color 0.15s;
+      }
+      .socials a:hover { background: var(--accent); color: #fff; text-decoration: none; }
+      .socials svg { width: 1.25rem; height: 1.25rem; }
+
+      /* Tables */
+      .table-wrap { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; text-align: left; }
+      thead tr { border-bottom: 2px solid rgba(197, 99, 29, 0.4); }
+      th { padding: 0.75rem 1.5rem 0.75rem 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; }
+      td { padding: 1rem 1.5rem 1rem 0; border-bottom: 1px solid var(--border-soft); }
+      td.role { color: var(--accent); }
+      td.bold { font-weight: 600; }
+      td.nowrap { white-space: nowrap; color: #4b5263; }
+
+      /* Assignments */
+      .assignment { border-left: 4px solid rgba(197, 99, 29, 0.6); padding-left: 1.5rem; margin-bottom: 4rem; }
+      .assignment h3 { font-size: 1.5rem; }
+      .assignment-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; }
+      .assignment-dates { color: var(--accent); font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+      .meta-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.25rem; color: #4b5263; }
+      @media (min-width: 640px) { .meta-grid { grid-template-columns: repeat(3, 1fr); } }
+      .resp-title { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; font-weight: 700; color: var(--accent); margin: 1rem 0 0.5rem; }
+      ul.resp { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 0.25rem 1.5rem; }
+      @media (min-width: 640px) { ul.resp { grid-template-columns: 1fr 1fr; } }
+      ul.resp li::before { content: "• "; color: var(--accent); margin-right: 0.35rem; }
+      .outcome { font-style: italic; margin: 1rem 0; }
+      .stack { font-size: 0.875rem; color: #4b5263; }
+
+      /* Skills */
+      .skill-row { display: grid; grid-template-columns: 1fr; gap: 0.5rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-soft); }
+      @media (min-width: 640px) { .skill-row { grid-template-columns: 14rem 1fr; gap: 1.5rem; } }
+      .skill-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+
+      /* Education */
+      .edu-row { display: flex; flex-direction: column; gap: 0.5rem; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-soft); }
+      @media (min-width: 768px) { .edu-row { flex-direction: row; justify-content: space-between; align-items: baseline; } }
+      .edu-row .when { color: var(--accent); font-weight: 600; white-space: nowrap; }
+      .edu-row .name { font-weight: 600; font-size: 1.05rem; }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a href="#about" class="avatar"><img src="photo.jpg" alt="Anthony James Hiscock" /></a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#assignments">Assignments</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </nav>
+    </aside>
+
+    <main>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <h1>Anthony James <span class="accent">Hiscock</span></h1>
+          <div class="tagline">Utrecht, NL · DevOps Engineer · <a href="mailto:anthonyjhiscock@gmail.com">anthonyjhiscock@gmail.com</a></div>
+
+          <div class="grid-2">
+            <div>
+              <h3 class="uppercase" style="margin-bottom:1rem;">Personalia</h3>
+              <div class="row"><div class="label">Name</div><div>Anthony James Hiscock</div></div>
+              <div class="row"><div class="label">Place of Residence</div><div>Utrecht</div></div>
+              <div class="row"><div class="label">Function</div><div>DevOps Engineer</div></div>
+              <div class="row"><div class="label">Languages</div><div>Afrikaans, English, Dutch</div></div>
+              <div class="row"><div class="label">Experience Since</div><div>2019</div></div>
+            </div>
+            <div>
+              <h3 class="uppercase" style="margin-bottom:1rem;">Specialism</h3>
+              <ul class="specs">
+                <li>Cloud DevOps Solutions Engineering</li>
+                <li>Software Engineering</li>
+                <li>DevOps Team Coaching</li>
+                <li>Scaled Agile Framework (SAFe)</li>
+                <li>Systems Integration</li>
+                <li>Linux Systems Development</li>
+                <li>Project Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="uppercase" style="margin-bottom:1rem;">Summary</h3>
+          <div class="summary">
+            <p>Anthony is a DevOps professional with proven experience in numerous Agile and Microsoft DevOps teams.</p>
+            <p>He has 7 years of experience in DevOps, software project management, CI/CD, testing, automation, integration and Agile coaching, including 2 years of full-stack Agile software project development using Jira, Azure DevOps, Git, Java, Python, MySQL and PostgreSQL.</p>
+            <p>As a computer enthusiast, he keeps up with developments in the Linux, Windows and Mac worlds as a matter of both personal interest and professional pursuit.</p>
+            <p>His experience in large and diverse teams, strong expertise in design and development, and passion for technology shine through when integrating new systems and processes into existing environments and teams. His communication and analytical skills have been honed through collaboration in large teams and complex project configurations.</p>
+          </div>
+
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/aj-hiscock/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://github.com/makeitstatic" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a href="https://www.instagram.com/mister.hiscock/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.facebook.com/Mr.Hiscock" target="_blank" rel="noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <div class="container">
+          <h2>Work Experience</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Start</th><th>End</th><th>Workplace</th><th>Role</th></tr></thead>
+              <tbody>
+                <tr><td class="nowrap">September 2024</td><td class="nowrap">September 2026</td><td class="bold">Rabobank, Utrecht, NL</td><td class="role">DevOps Engineer</td></tr>
+                <tr><td class="nowrap">September 2023</td><td class="nowrap">August 2024</td><td class="bold">Smith Solutions, Amsterdam, NL</td><td class="role">DevOps Engineer</td></tr>
+                <tr><td class="nowrap">February 2022</td><td class="nowrap">August 2023</td><td class="bold">CIM Solutions, Vianen, NL</td><td class="role">DevOps Engineer</td></tr>
+                <tr><td class="nowrap">September 2020</td><td class="nowrap">January 2022</td><td class="bold">Nedbank, Sandton, RSA</td><td class="role">DevOps Engineer</td></tr>
+                <tr><td class="nowrap">January 2020</td><td class="nowrap">September 2020</td><td class="bold">Freelance, Pretoria, RSA</td><td class="role">Software Engineer</td></tr>
+                <tr><td class="nowrap">January 2019</td><td class="nowrap">December 2019</td><td class="bold">EOH Digital, Midrand, RSA</td><td class="role">Software Engineer</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- ASSIGNMENTS -->
+      <section id="assignments">
+        <div class="container">
+          <h2>Assignments</h2>
+
+          <article class="assignment">
+            <div class="assignment-head"><h3>DevOps Transformation</h3><span class="assignment-dates">September 2024 — September 2026</span></div>
+            <div class="meta-grid"><div><span class="muted-label">Client:</span> Rabobank</div><div><span class="muted-label">Industry:</span> Banking</div><div><span class="muted-label">Role:</span> DevOps Engineer / Coach</div></div>
+            <p>Rabobank embarked on a large-scale digital transformation, modernising legacy ways of working into a Scaled Agile DevOps environment while navigating the strict compliance and security requirements of a regulated financial institution.</p>
+            <p>As part of this programme, squads were migrated from tools such as Jira to Azure DevOps, and technical teams transitioned from Jenkins and hybrid-cloud setups to fully cloud-native solutions on Azure and AWS.</p>
+            <p>Engaged as part of the IT4IT squad, Anthony was brought in to enable and accelerate this transition — designing tooling solutions and providing hands-on coaching and technical support to development teams.</p>
+            <div class="resp-title">Responsibilities</div>
+            <ul class="resp"><li>Azure cloud engineering.</li><li>Requirement analysis of project team demands.</li><li>Agile / Scrum.</li><li>International banking regulations and standards.</li></ul>
+            <p class="outcome">Together, the team successfully embedded the DevOps way of working across the tribe, supporting over 56 teams and delivering cross-tribe assistance at both technical and management levels.</p>
+            <div class="resp-title">Methods &amp; Techniques</div>
+            <p class="stack">Agile/Scrum, Git, Bash, SonarQube, Nexus Repository Manager, Linux, project management, reporting, systems integration, Docker, VS Code, C#, .NET Framework, Angular, Python, Postman, Oracle VirtualBox, MS Teams, macOS, Azure DevOps, Azure Cloud.</p>
+          </article>
+
+          <article class="assignment">
+            <div class="assignment-head"><h3>DevOps Infrastructure</h3><span class="assignment-dates">March 2022 — September 2023</span></div>
+            <div class="meta-grid"><div><span class="muted-label">Client:</span> Rijksvastgoedbedrijf</div><div><span class="muted-label">Industry:</span> Government</div><div><span class="muted-label">Role:</span> DevOps Engineer</div></div>
+            <p>The Rijksvastgoedbedrijf (RVB) is a large government organisation with multiple development teams. A new DevOps team was set up to support the development teams with deployments, infrastructure and monitoring.</p>
+            <p>Anthony was responsible for configuring and maintaining various DevOps tools, including setting up servers for Jenkins, Nexus, GitLab and SonarQube, as well as deployment environments for the various teams' applications. Management of these services was handled through an on-premise private cloud solution powered by Ansible.</p>
+            <div class="resp-title">Responsibilities</div>
+            <ul class="resp"><li>Private cloud engineering.</li><li>Requirement analysis of project team demands.</li><li>Creating and maintaining Jenkins pipelines.</li><li>Containerisation.</li><li>Agile / Scrum.</li><li>Testing.</li></ul>
+            <p class="outcome">The result was the successful implementation of CI/CD for teams within the RVB, from source code management through to production deployments.</p>
+            <div class="resp-title">Methods &amp; Techniques</div>
+            <p class="stack">Agile/Scrum, Podman, Git, Jira, Jenkins, Ansible, Bash, SonarQube, Nexus Repository (dependency manager), Linux, project management, reporting, systems integration, Docker, VS Code, C#, .NET Framework, Angular, Python, Postman, Oracle VirtualBox, MobaXterm, Webex, MS Teams.</p>
+          </article>
+
+          <article class="assignment">
+            <div class="assignment-head"><h3>BizDevOps</h3><span class="assignment-dates">April 2021 — January 2022</span></div>
+            <div class="meta-grid"><div><span class="muted-label">Client:</span> Nedbank, Sandton</div><div><span class="muted-label">Industry:</span> Banking</div><div><span class="muted-label">Role:</span> DevOps Coach</div></div>
+            <p>Nedbank is a large organisation with many new and ongoing projects. A DevOps team was created to support company infrastructure and projects, and existing teams needed to be upskilled to use the improved infrastructure. The DevOps team took the lead on these changes, and Anthony was appointed as DevOps Coach and Support.</p>
+            <p>This position formed part of a team effort to support business activities relating to internal systems maintenance and to guide project teams in the use of the Azure DevOps stack.</p>
+            <div class="resp-title">Responsibilities</div>
+            <ul class="resp"><li>Hybrid cloud engineering.</li><li>Support on the internal business DevOps service desk.</li><li>Requirement analysis of project team demands.</li><li>Project solution design.</li><li>CI/CD coaching.</li><li>Handling and delivering user stories.</li><li>Reporting.</li><li>Supporting the Agile Scrum process within teams.</li></ul>
+            <p class="outcome">The result was the successful migration of teams from on-premise resources (builds, deployments, SCM) to cloud-based toolchains (Git, Azure Pipelines), along with the continuous maintenance and improvement of internal VPNs and tooling. All activities were reported on regularly to senior management.</p>
+            <div class="resp-title">Methods &amp; Techniques</div>
+            <p class="stack">Git SCM, Azure Pipelines (CI/CD), SonarCloud, Nexus Repository (dependency manager), Agile, Scrum, Azure DevOps, project management, reporting, process integration, Docker, Kubernetes, Jira, Rancher, Visual Studio, VS Code, Bash, C#, .NET Core, Java, Angular, Terraform, Maven.</p>
+          </article>
+
+          <article class="assignment">
+            <div class="assignment-head"><h3>TinyERP</h3><span class="assignment-dates">February 2020 — February 2021</span></div>
+            <div class="meta-grid"><div><span class="muted-label">Client:</span> Sucaba Global</div><div><span class="muted-label">Industry:</span> Corporate ERP / CRM</div><div><span class="muted-label">Role:</span> Software Engineer</div></div>
+            <p>Sucaba Global started out as a payroll management service platform and was expanding to include full CRM and ERP support for other business activities. This had to be accomplished while continuing to service existing customers on the current payroll system, in parallel with developing the new ERP/CRM platform. Anthony was appointed as Full-Stack Python Web Engineer.</p>
+            <div class="resp-title">Responsibilities</div>
+            <ul class="resp"><li>Requirements analysis with the Product Owner.</li><li>Defining user stories.</li><li>Delivery of monthly progress reports.</li><li>UI design.</li><li>Back-end programming.</li><li>Proactive monitoring and testing of system performance.</li><li>Mobile web app development.</li><li>E-commerce website development.</li></ul>
+            <p class="outcome">The result was a deployable and scalable solution for small to medium-sized businesses. Successful implementation allowed clients to reduce costs by replacing several stand-alone payroll, HR and other ERP/CRM software solutions with a single integrated service.</p>
+            <div class="resp-title">Methods &amp; Techniques</div>
+            <p class="stack">Python, Flask, Bootstrap, WordPress, cPanel, HTML, CSS, JavaScript, NativeScript.</p>
+          </article>
+
+          <article class="assignment">
+            <div class="assignment-head"><h3>Reserve Bank Forms Processing</h3><span class="assignment-dates">February 2019 — January 2020</span></div>
+            <div class="meta-grid"><div><span class="muted-label">Client:</span> South African Reserve Bank</div><div><span class="muted-label">Industry:</span> Banking — Web App</div><div><span class="muted-label">Role:</span> Software Engineer</div></div>
+            <p>The South African Reserve Bank processes a large volume of tax forms each season using outdated methods. A web-based solution for rendering and processing forms was required to enable higher and more accurate throughput of annual tax form submissions. The project started in 2018, and Anthony joined in 2019 as one of the Java software engineers on the team. The teams were cross-functional and highly Agile.</p>
+            <div class="resp-title">Responsibilities</div>
+            <ul class="resp"><li>UI/UX development.</li><li>Experimental implementation of new features.</li><li>Bug fixes on existing features.</li><li>Systems integration.</li><li>Proactively monitoring overall progress.</li><li>Managing and resolving risk associated with new features.</li><li>Drafting UI/UX documentation.</li><li>System optimisation.</li><li>Drafting use cases.</li></ul>
+            <p class="outcome">The result was a rapid expansion of overall system capabilities, efficiency improvements in the back-end system and surrounding business processes, and UI/UX enhancements throughout.</p>
+            <div class="resp-title">Methods &amp; Techniques</div>
+            <p class="stack">Git SCM, Agile and Rapid Application Development, Java, Spring Boot, Adobe Experience Manager, Apache Sling, RabbitMQ, SendGrid, JUnit, Cucumber, Selenium, Scrum, JavaScript, Maven, IntelliJ.</p>
+          </article>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="container">
+          <h2>Technical Expertise</h2>
+          <div class="skill-row"><div class="skill-label">Databases</div><div>MySQL, PostgreSQL, Azure SQL, Azure Cosmos DB, MS SQL.</div></div>
+          <div class="skill-row"><div class="skill-label">(Development) Tools</div><div>Jenkins, UrbanCode Deploy, Git, Visual Studio, VS Code, Azure DevOps, SonarQube, Terraform, Rancher, MS Power Platform, Docker, Maven, Podman.</div></div>
+          <div class="skill-row"><div class="skill-label">Development Methods</div><div>DevOps, Agile.</div></div>
+          <div class="skill-row"><div class="skill-label">Project Management</div><div>Jira, Azure DevOps, Kanban, Scrum.</div></div>
+          <div class="skill-row"><div class="skill-label">Operating Systems</div><div>Linux, Windows, Mac.</div></div>
+          <div class="skill-row"><div class="skill-label">Protocols</div><div>TCP/IP, UDP, SSL.</div></div>
+          <div class="skill-row"><div class="skill-label">Programming Languages</div><div>Java, Python, C#.</div></div>
+          <div class="skill-row"><div class="skill-label">File Formats</div><div>YAML, XML, JSON, JavaScript, HTML, CSS.</div></div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="container">
+          <h2>Education &amp; Certifications</h2>
+
+          <h3 class="uppercase" style="margin-bottom:1rem;">Formal Education</h3>
+          <div style="margin-bottom:3rem;">
+            <div class="edu-row">
+              <div><div class="name">Belgium Campus, Pretoria</div><div>Bachelor of Computing — Software Engineering</div></div>
+              <div class="when">2016 – 2019</div>
+            </div>
+            <div class="edu-row">
+              <div><div class="name">Hoërskool Montana, Pretoria</div><div>National Senior Certificate — Technical</div></div>
+              <div class="when">2011 – 2015</div>
+            </div>
+          </div>
+
+          <h3 class="uppercase" style="margin-bottom:1rem;">Professional Training</h3>
+          <div class="table-wrap" style="margin-bottom:3rem;">
+            <table>
+              <thead><tr><th>Start</th><th>Finish</th><th>Course</th></tr></thead>
+              <tbody>
+                <tr><td class="nowrap">July 2021</td><td class="nowrap">October 2021</td><td>MS Azure Kubernetes</td></tr>
+                <tr><td class="nowrap">February 2020</td><td class="nowrap">December 2020</td><td>Azure DevOps and Agile Team Training</td></tr>
+                <tr><td class="nowrap">January 2020</td><td class="nowrap">June 2020</td><td>Spring Boot General Project Use</td></tr>
+                <tr><td class="nowrap">January 2019</td><td class="nowrap">January 2020</td><td>Agile Software Development</td></tr>
+                <tr><td class="nowrap">November 2022</td><td class="nowrap">December 2022</td><td>Red Hat OpenShift: Containers with Podman (DO188R)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="uppercase" style="margin-bottom:1rem;">Additional Certifications</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Date</th><th>Certification</th></tr></thead>
+              <tbody>
+                <tr><td class="nowrap" style="color:var(--accent);font-weight:600;">2021</td><td>Microsoft Certified: Azure Fundamentals (AZ-900)</td></tr>
+                <tr><td class="nowrap" style="color:var(--accent);font-weight:600;">2022</td><td>EXIN DevOps Foundation</td></tr>
+                <tr><td class="nowrap" style="color:var(--accent);font-weight:600;">2023</td><td>Linux Foundation Certified IT Associate (LFCA)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

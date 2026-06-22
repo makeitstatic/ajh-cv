@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-# trigger: manual re-run
 
 on:
   push:
@@ -21,41 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Build (static, GitHub Pages)
-        env:
-          DEPLOY_TARGET: gh-pages
-        run: bun run build
-
-      - name: Locate static output
-        id: find
-        run: |
-          if [ -d ".output/public" ]; then
-            echo "dir=.output/public" >> $GITHUB_OUTPUT
-          elif [ -d "dist" ]; then
-            echo "dir=dist" >> $GITHUB_OUTPUT
-          else
-            echo "No static output found" >&2
-            ls -la
-            exit 1
-          fi
-
-      - name: SPA fallback (404.html) + .nojekyll
-        run: |
-          touch "${{ steps.find.outputs.dir }}/.nojekyll"
-          if [ -f "${{ steps.find.outputs.dir }}/index.html" ]; then
-            cp "${{ steps.find.outputs.dir }}/index.html" "${{ steps.find.outputs.dir }}/404.html"
-          fi
+      - name: Add .nojekyll
+        run: touch static/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.find.outputs.dir }}
+          path: static
 
   deploy:
     needs: build
