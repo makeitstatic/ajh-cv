@@ -211,8 +211,8 @@ const ASSIGNMENTS: Assignment[] = [
     industry: "Banking",
     client: "Nedbank, Sandton",
     role: "DevOps Coach",
-    start: "June 2021",
-    end: "March 2022",
+    start: "April 2021",
+    end: "January 2022",
     description: (
       <>
         <p>
@@ -419,10 +419,10 @@ function ResumePage() {
               Microsoft DevOps teams.
             </p>
             <p>
-              He has 5 years of experience in DevOps, software project management, CI/CD,
+              He has 7 years of experience in DevOps, software project management, CI/CD,
               testing, automation, integration and Agile coaching, including 2 years of
-              full-stack Agile software project development using Jira, Git SCM, Java, Python,
-              MySQL and PostgreSQL.
+              full-stack Agile software project development using Jira, Azure DevOps, Git,
+              Java, Python, MySQL and PostgreSQL.
             </p>
             <p>
               As a computer enthusiast, he keeps up with developments in the Linux, Windows and
