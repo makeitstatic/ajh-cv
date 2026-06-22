@@ -72,7 +72,7 @@ function Sidebar() {
           src={profilePhoto.url}
           alt="Anthony James Hiscock"
           className="w-full h-full object-cover"
-          style={{ objectPosition: "50% 30%" }}
+          style={{ objectPosition: "50% 50%" }}
         />
       </a>
       <nav className="flex-1 md:flex-none flex md:flex-col items-center gap-1 md:gap-0 overflow-x-auto">
