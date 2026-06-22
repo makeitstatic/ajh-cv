@@ -67,7 +67,7 @@
         background: var(--sidebar-border);
       }
       .avatar img { width: 100%; height: 100%; object-fit: cover; }
-      .nav { display: flex; flex-direction: column; }
+      .nav { display: flex; flex-direction: column; align-items: center; }
       .nav a {
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -76,8 +76,10 @@
         padding: 0.75rem 1rem;
         color: var(--sidebar-muted);
         transition: color 0.15s;
+        text-align: center;
       }
-      .nav a:hover { color: var(--accent); text-decoration: none; }
+      .nav a:hover,
+      .nav a.active { color: var(--accent); text-decoration: none; }
 
       @media (min-width: 768px) {
         .sidebar {
