@@ -43,7 +43,7 @@ function useActiveSection() {
   useEffect(() => {
     const compute = () => {
       const offset = window.innerHeight * 0.3;
-      let current = SECTIONS[0].id;
+      let current: string = SECTIONS[0].id;
       for (const s of SECTIONS) {
         const el = document.getElementById(s.id);
         if (!el) continue;
