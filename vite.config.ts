@@ -30,9 +30,7 @@ export default defineConfig({
         vite: {
           base: "/AJH-CV/",
         },
-        nitro: {
-          preset: "static",
-        },
       }
     : {}),
+
 });
