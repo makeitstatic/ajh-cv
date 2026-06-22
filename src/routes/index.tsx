@@ -389,10 +389,10 @@ function ResumePage() {
           <div className="text-lg text-muted-foreground mb-8 uppercase tracking-wider">
             Utrecht, NL · DevOps Engineer ·{" "}
             <a
-              href="mailto:anthonyjhiscock@gmail.com"
+              href="mailto:thiswillfindajh@pm.me"
               className="text-accent-foreground hover:underline"
             >
-              anthonyjhiscock@gmail.com
+              thiswillfindajh@pm.me
             </a>
           </div>
 
