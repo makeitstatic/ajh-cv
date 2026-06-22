@@ -32,7 +32,6 @@ export default defineConfig({
         },
         nitro: {
           preset: "static",
-          baseURL: "/AJH-CV/",
         },
       }
     : {}),
