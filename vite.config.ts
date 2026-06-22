@@ -6,33 +6,9 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// When building for GitHub Pages, set DEPLOY_TARGET=gh-pages so the app is
-// emitted as a fully static site under the /AJH-CV/ subpath.
-const isGhPages = process.env.DEPLOY_TARGET === "gh-pages";
-
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
-    ...(isGhPages
-      ? {
-          prerender: {
-            enabled: true,
-            crawlLinks: true,
-            routes: ["/"],
-          },
-        }
-      : {}),
   },
-  ...(isGhPages
-    ? {
-        vite: {
-          base: "/AJH-CV/",
-        },
-        nitro: {
-          preset: "static",
-        },
-      }
-    : {}),
 });
